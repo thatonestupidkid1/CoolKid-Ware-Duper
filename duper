@@ -1,0 +1,146 @@
+--████████╗██╗░░██╗██╗░██████╗  ░██████╗░█████╗░██████╗░██╗██████╗░████████╗  ░██╗░░░░░░░██╗░█████╗░░██████╗
+--╚══██╔══╝██║░░██║██║██╔════╝  ██╔════╝██╔══██╗██╔══██╗██║██╔══██╗╚══██╔══╝  ░██║░░██╗░░██║██╔══██╗██╔════╝
+--░░░██║░░░███████║██║╚█████╗░  ╚█████╗░██║░░╚═╝██████╔╝██║██████╔╝░░░██║░░░  ░╚██╗████╗██╔╝███████║╚█████╗░
+--░░░██║░░░██╔══██║██║░╚═══██╗  ░╚═══██╗██║░░██╗██╔══██╗██║██╔═══╝░░░░██║░░░  ░░████╔═████║░██╔══██║░╚═══██╗
+--░░░██║░░░██║░░██║██║██████╔╝  ██████╔╝╚█████╔╝██║░░██║██║██║░░░░░░░░██║░░░  ░░╚██╔╝░╚██╔╝░██║░░██║██████╔╝
+--░░░╚═╝░░░╚═╝░░╚═╝╚═╝╚═════╝░  ╚═════╝░░╚════╝░╚═╝░░╚═╝╚═╝╚═╝░░░░░░░░╚═╝░░░  ░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═════╝░
+ 
+--███╗░░░███╗░█████╗░██████╗░███████╗  ██████╗░██╗░░░██╗
+--████╗░████║██╔══██╗██╔══██╗██╔════╝  ██╔══██╗╚██╗░██╔╝
+--██╔████╔██║███████║██║░░██║█████╗░░  ██████╦╝░╚████╔╝░
+--██║╚██╔╝██║██╔══██║██║░░██║██╔══╝░░  ██╔══██╗░░╚██╔╝░░
+--██║░╚═╝░██║██║░░██║██████╔╝███████╗  ██████╦╝░░░██║░░░
+--╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═════╝░╚══════╝  ╚═════╝░░░░╚═╝░░░
+ 
+--░░░░░██╗░█████╗░███╗░░░███╗███████╗░██████╗████████╗██╗░░██╗░█████╗░░█████╗░░█████╗░░█████╗░██╗░░░░░██╗░░██╗██╗██████╗░
+--░░░░░██║██╔══██╗████╗░████║██╔════╝██╔════╝╚══██╔══╝██║░░██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║░░░░░██║░██╔╝██║██╔══██╗
+--░░░░░██║███████║██╔████╔██║█████╗░░╚█████╗░░░░██║░░░███████║███████║██║░░╚═╝██║░░██║██║░░██║██║░░░░░█████═╝░██║██║░░██║
+--██╗░░██║██╔══██║██║╚██╔╝██║██╔══╝░░░╚═══██╗░░░██║░░░██╔══██║██╔══██║██║░░██╗██║░░██║██║░░██║██║░░░░░██╔═██╗░██║██║░░██║
+--╚█████╔╝██║░░██║██║░╚═╝░██║███████╗██████╔╝░░░██║░░░██║░░██║██║░░██║╚█████╔╝╚█████╔╝╚█████╔╝███████╗██║░╚██╗██║██████╔╝
+--░╚════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░░╚════╝░░╚════╝░╚══════╝╚═╝░░╚═╝╚═╝╚═════╝░
+
+
+
+
+
+
+--CoolKid-Ware made by JamesThaCoolKid
+
+
+
+-- the script is only seperate because MoonSecV3 broke the other duper lol
+
+
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("CoolKid-Ware Duper", "DarkTheme")
+
+wait(1.2)
+game.StarterGui:SetCore("SendNotification", {
+Title = "CoolKid-Ware Duper!"; 
+Text = "Made By JamesThaCoolKid Aka Jahmehz"; 
+Duration = 5; 
+})
+
+
+--_______________________________________________________________________________________________
+
+local Tab = Window:NewTab("Boombox Duper")
+
+
+local Section = Tab:NewSection("Boombox duper")
+
+Section:NewTextBox("in void dupe (anygame)", "", function(xd)
+
+    
+    local amount = xd
+        
+    local plr = game:GetService("Players").LocalPlayer
+    local character = plr.Character
+    
+    local ogpos = character.HumanoidRootPart.Position
+    
+    for i = 1, amount do
+       character:WaitForChild("HumanoidRootPart")
+       for i,v in pairs(plr.Backpack:GetChildren()) do
+           if v:IsA("Tool") then v.Parent = character end
+       end
+       for i,v in pairs(character:GetChildren()) do
+           if v:IsA("Tool") then v.Parent = character end
+       end
+       character.HumanoidRootPart.CFrame = CFrame.new(0,9999999999,0)
+       repeat wait() until not plr.Backpack:FindFirstChildOfClass("Tool")
+       wait(0.75)
+       for i,v in pairs(character:GetChildren()) do
+           if v:IsA("BasePart") then
+               v.CanCollide = false
+               v.Anchored = true
+           end
+       end
+       for i,v in pairs(character:GetChildren()) do
+           if v:IsA("Tool") then v.Parent = workspace end
+       end
+       character:BreakJoints()
+       plr.CharacterAdded:Wait()
+       character = plr.Character
+    end
+    
+    character:WaitForChild('HumanoidRootPart')
+    wait(0.15)
+    character.HumanoidRootPart.CFrame = CFrame.new(ogpos)
+    for i,v in pairs(workspace:GetChildren()) do
+       if v:IsA("Tool") then
+           character.Humanoid:EquipTool(v)    
+       end
+    end
+    end)
+    
+    Section:NewTextBox("house dupe (dhrp)", "", function(ff)
+    
+    local amount = ff
+        
+    local plr = game:GetService("Players").LocalPlayer
+    local character = plr.Character
+    
+    
+        
+    local ogpos = character.HumanoidRootPart.Position
+    
+    for i = 1, amount do
+       character:WaitForChild("HumanoidRootPart")
+       for i,v in pairs(plr.Backpack:GetChildren()) do
+           if v:IsA("Tool") then v.Parent = character end
+       end
+       for i,v in pairs(character:GetChildren()) do
+           if v:IsA("Tool") then v.Parent = character end
+       end
+       character.HumanoidRootPart.CFrame = CFrame.new(113.06, 19.74, 86.539)
+       repeat wait() until not plr.Backpack:FindFirstChildOfClass("Tool")
+       wait(0.25)
+       for i,v in pairs(character:GetChildren()) do
+           if v:IsA("BasePart") then
+               v.CanCollide = false
+               v.Anchored = true
+           end
+       end
+       for i,v in pairs(character:GetChildren()) do
+           if v:IsA("Tool") then v.Parent = workspace end
+       end
+       character:BreakJoints()
+       plr.CharacterAdded:Wait()
+       character = plr.Character
+    end
+    
+    character:WaitForChild('HumanoidRootPart')
+    wait(0.15)
+    character.HumanoidRootPart.CFrame = CFrame.new(ogpos)
+    for i,v in pairs(workspace:GetChildren()) do
+       if v:IsA("Tool") then
+           character.Humanoid:EquipTool(v)    
+       end
+       end
+    end)
+
+
+--_______________________________________________________________________________________________
