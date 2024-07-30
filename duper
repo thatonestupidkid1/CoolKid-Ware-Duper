@@ -39,7 +39,7 @@ local Window = Library.CreateLib("CoolKid-Ware Duper", "DarkTheme")
 wait(1.2)
 game.StarterGui:SetCore("SendNotification", {
 Title = "CoolKid-Ware Duper!"; 
-Text = "Made By JamesThaCoolKid Aka Jahmehz"; 
+Text = "Made By JamesThaCoolKid Aka Jahmehz Aka thatonestupidkid"; 
 Duration = 5; 
 })
 
